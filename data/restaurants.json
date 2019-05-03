@@ -2,8 +2,10 @@
   "restaurants": [{
     "id": 1,
     "name": "Mission Chinese Food",
+    "alt":"elegant restaurant with modern interior design",
     "neighborhood": "Manhattan",
     "photograph": "1.jpg",
+    "photoMini": "1mid.jpg",
     "address": "171 E Broadway, New York, NY 10002",
     "latlng": {
       "lat": 40.713829,
@@ -41,8 +43,10 @@
   }, {
     "id": 2,
     "name": "Emily",
+    "alt":"pizza lying on the wooden table",
     "neighborhood": "Brooklyn",
     "photograph": "2.jpg",
+    "photoMini": "2mid.jpg",
     "address": "919 Fulton St, Brooklyn, NY 11238",
     "latlng": {
       "lat": 40.683555,
@@ -80,8 +84,10 @@
   }, {
     "id": 3,
     "name": "Kang Ho Dong Baekjeong",
+    "alt":"modern industrial interior",
     "neighborhood": "Manhattan",
     "photograph": "3.jpg",
+    "photoMini": "3mid.jpg",
     "address": "1 E 32nd St, New York, NY 10016",
     "latlng": {
       "lat": 40.747143,
@@ -119,8 +125,10 @@
   }, {
     "id": 4,
     "name": "Katz's Delicatessen",
+    "alt":"night life scene",
     "neighborhood": "Manhattan",
     "photograph": "4.jpg",
+    "photoMini": "4mid.jpg",
     "address": "205 E Houston St, New York, NY 10002",
     "latlng": {
       "lat": 40.722216,
@@ -158,8 +166,10 @@
   }, {
     "id": 5,
     "name": "Roberta's Pizza",
+    "alt":"industrial frendly interior with a lot of people inside",
     "neighborhood": "Brooklyn",
     "photograph": "5.jpg",
+    "photoMini": "5mid.jpg",
     "address": "261 Moore St, Brooklyn, NY 11206",
     "latlng": {
       "lat": 40.705089,
@@ -197,8 +207,10 @@
   }, {
     "id": 6,
     "name": "Hometown BBQ",
+    "alt":"industrial simple interior with a folden tables and chairs",
     "neighborhood": "Brooklyn",
     "photograph": "6.jpg",
+    "photoMini": "6mid.jpg",
     "address": "454 Van Brunt St, Brooklyn, NY 11231",
     "latlng": {
       "lat": 40.674925,
@@ -236,8 +248,10 @@
   }, {
     "id": 7,
     "name": "Superiority Burger",
+    "alt":"store window of casual crowdy place",
     "neighborhood": "Manhattan",
     "photograph": "7.jpg",
+    "photoMini": "7mid.jpg",
     "address": "430 E 9th St, New York, NY 10009",
     "latlng": {
       "lat": 40.727397,
@@ -275,8 +289,10 @@
   }, {
     "id": 8,
     "name": "The Dutch",
+    "alt":"signbord named the duch",
     "neighborhood": "Manhattan",
     "photograph": "8.jpg",
+    "photoMini": "8mid.jpg",
     "address": "131 Sullivan St, New York, NY 10012",
     "latlng": {
       "lat": 40.726584,
@@ -314,8 +330,10 @@
   }, {
     "id": 9,
     "name": "Mu Ramen",
+    "alt":"intimate quiet interior",
     "neighborhood": "Queens",
     "photograph": "9.jpg",
+    "photoMini": "9mid.jpg",
     "address": "1209 Jackson Ave, Queens, NY 11101",
     "latlng": {
       "lat": 40.743797,
@@ -353,8 +371,10 @@
   }, {
     "id": 10,
     "name": "Casa Enrique",
+    "alt":"empty elegant clean modern interior",
     "neighborhood": "Queens",
     "photograph": "10.jpg",
+    "photoMini": "10mid.jpg",
     "address": "5-48 49th Ave, Queens, NY 11101",
     "latlng": {
       "lat": 40.743394,

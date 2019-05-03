@@ -8,10 +8,50 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  // registerTheServiceWorker();
+  skiplink();
+  initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
+  changetabindex ('map');
 });
+
+/** service worker*/
+// function registerTheServiceWorker(){
+//   if(!navigator.serviceWorker) return;
+//
+// navigator.serviceWorker.register('js/sw/sw.js').then(function() {
+//    console.log("Service Worker Registered");
+//  }).catch(function(){
+//    console.log("Registration failed");
+//  });
+// }
+
+/**
+ * skip link event listener
+ */
+function skiplink(){
+  let link = document.getElementById('skiplink');
+  link.addEventListener('click', function(){
+    let element = document.getElementById('filterResults');
+    element.tabIndex=-1;
+    element.focus();
+  } );
+}
+
+/**
+ * change tabindex to -1
+ */
+
+function changetabindex (domElementID){
+  let tabindex = document.getElementById(domElementID);
+  tabindex.tabIndex = -1;
+}
+
+
+
+
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -72,13 +112,16 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize leaflet map, called from HTML.
  */
 initMap = () => {
+
   self.newMap = L.map('map', {
         center: [40.722216, -73.987501],
         zoom: 12,
-        scrollWheelZoom: false
+        scrollWheelZoom: false,
       });
+
+
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: '<your MAPBOX API KEY HERE>',
+    mapboxToken: 'pk.eyJ1IjoiY3p1cHVyZWs2NjYiLCJhIjoiY2p1bWZyN3FrMjlneDN5cWpoN2J1eGFpOSJ9.ppI4B22y68iPxMZR_J94ag',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -88,6 +131,7 @@ initMap = () => {
 
   updateRestaurants();
 }
+
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -157,11 +201,18 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.setAttribute('aria-role','menu-item');
+  li.setAttribute('aria-label','restaurant description');
+
+
+
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = DBHelper.imageUrlForRestaurantMini(restaurant);
   li.append(image);
+  // KK
+  image.alt = restaurant.name;
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
@@ -197,7 +248,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -208,4 +259,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
