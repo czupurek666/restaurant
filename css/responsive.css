@@ -17,7 +17,10 @@
   }
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 870px) {
+  #restaurants-list {
+     grid-template-columns: auto;
+  }
   .inside header {
     position: absolute;
     top: 0;
